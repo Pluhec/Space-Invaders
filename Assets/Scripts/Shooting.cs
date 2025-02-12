@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
     public Transform nozzle;
     public float bulletSpeed = 20f;
     public float specialAbilitySpeed = 40f;
-    public int specialAbilityCount = 3;
+    public int specialAbilityCount = 8;
     public float specialAbilityCooldown = 10f;
 
     void Update()
