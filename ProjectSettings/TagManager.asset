@@ -6,6 +6,7 @@ TagManager:
   tags:
   - background
   - bulletDeleteBarrier
+  - asteroidDeleteBarrier
   layers:
   - Default
   - TransparentFX
@@ -15,12 +16,12 @@ TagManager:
   - UI
   - Bullet
   - Barrier
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Spawn
+  - Enemy
+  - BulletDeleteBarrier
+  - AsteroidDeleteBarrier
+  - Asteroid
+  - MovingBarrier
   - 
   - 
   - 
