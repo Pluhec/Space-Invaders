@@ -7,6 +7,8 @@ TagManager:
   - background
   - bulletDeleteBarrier
   - asteroidDeleteBarrier
+  - bullet
+  - asteroid
   layers:
   - Default
   - TransparentFX

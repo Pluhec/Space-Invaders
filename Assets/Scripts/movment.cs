@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     float vertical;
 
     public float runSpeed = 2.0f;
+    public float health = 1f;
 
     void Start ()
     {

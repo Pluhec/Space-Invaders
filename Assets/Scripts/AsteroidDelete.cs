@@ -1,10 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class AsteroidDelete : MonoBehaviour
 {
+    public GameObject bullet;
     
-    public float bulletDamage = 1;
+    private void Start()
+    {
+        Destroy(gameObject, 7f);
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("asteroidDeleteBarrier"))

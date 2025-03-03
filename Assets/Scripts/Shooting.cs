@@ -18,10 +18,12 @@ public class Shooting : MonoBehaviour
             Shoot();
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)) 
         {
             ShootSpecialAbility();
+            
         }
+        
     }
 
     void Shoot()
@@ -45,6 +47,20 @@ public class Shooting : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, nozzle.position, Quaternion.identity);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.linearVelocity = direction * specialAbilitySpeed;
+        }
+    }
+    
+    void specialAbilityCooldownTimer()
+    {
+        specialAbilityCooldown = 10f;
+        if (specialAbilityCooldown > 0)
+        {
+            specialAbilityCooldown -= Time.deltaTime;
+            Debug.Log("Special Ability Cooldown: " + specialAbilityCooldown);
+        }
+        else
+        {
+            specialAbilityCooldown = 0;
         }
     }
 }

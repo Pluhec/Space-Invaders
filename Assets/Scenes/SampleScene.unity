@@ -212,12 +212,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefabs:
-  - {fileID: 5347252158202429505, guid: c3da59ba0ccff45edaa64c7e65a478f1, type: 3}
-  - {fileID: 5425586212449488707, guid: 207092f5fbe954605a5639a45c50ae60, type: 3}
-  - {fileID: 3677555378543842135, guid: 81329299677d84aaea982e14ee396df5, type: 3}
-  - {fileID: 4201382548472277010, guid: b72a39670a08e49ae9f7ab9ea552852a, type: 3}
+  - {fileID: 8781256480075379570, guid: ca413226aa5df45ba98b77c4e1a48a2c, type: 3}
+  - {fileID: 2830337335604348857, guid: a6fd390f5a6344986953e04b708ca873, type: 3}
+  - {fileID: 8386700678180927065, guid: eae79daefb1604dc3b60cbed243b96a4, type: 3}
+  - {fileID: 4642408236970150808, guid: 0f3fa407969f94b498622acd7dc6e68e, type: 3}
   EnemySpawn: {fileID: 82226285}
-  asteroidSpeed: 10
+  asteroidSpeed: 3
   asteroidSpawnRate: 1
 --- !u!114 &82226289
 MonoBehaviour:
@@ -1163,7 +1163,7 @@ Transform:
   m_GameObject: {fileID: 1216442991}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.76, y: -2.78, z: -0.026609855}
+  m_LocalPosition: {x: 1.69, y: -3.9, z: -0.026609855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1477,6 +1477,7 @@ MonoBehaviour:
   flameR: {fileID: 457850959}
   flameL: {fileID: 340206027}
   runSpeed: 5
+  health: 1
 --- !u!95 &1346298175
 Animator:
   serializedVersion: 7
