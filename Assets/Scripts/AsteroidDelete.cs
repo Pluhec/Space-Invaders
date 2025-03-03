@@ -17,5 +17,11 @@ public class AsteroidDelete : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("GameOver");
         }
+
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            Destroy(gameObject);
+            Debug.Log("Colided with bullet");
+        }
     }
 }
