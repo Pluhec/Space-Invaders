@@ -31,7 +31,12 @@ public class Asteroid : MonoBehaviour
                 break;
             case "bullet":
                 Destroy(gameObject);
-                Debug.Log("Collided with bullet");
+                var scoreComponent = collision.gameObject.GetComponent<ScoreManager>();
+                if (scoreComponent != null)
+                {
+                    scoreComponent.AddScore(10);
+                    Debug.Log("posilam score na hrace");
+                }
                 break;
         }
     }
