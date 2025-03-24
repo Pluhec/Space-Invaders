@@ -31,11 +31,15 @@ public class Asteroid : MonoBehaviour
                 break;
             case "bullet":
                 Destroy(gameObject);
-                var scoreComponent = collision.gameObject.GetComponent<ScoreManager>();
-                if (scoreComponent != null)
+                var player = GameObject.FindWithTag("Player");
+                if (player != null)
                 {
-                    scoreComponent.AddScore(10);
-                    Debug.Log("posilam score na hrace");
+                    var scoreComponent = player.GetComponent<ScoreManager>();
+                    if (scoreComponent != null)
+                    {
+                        scoreComponent.AddScore(2);
+                        Debug.Log("posilam score na hrace");
+                    }
                 }
                 break;
         }

@@ -7,7 +7,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    public int score = 10;
+    public int score = 20;
 
     private void Update()
     {
@@ -21,4 +21,5 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score: " + score;
         
     }
+    
 }
