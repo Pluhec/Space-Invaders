@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
@@ -12,6 +11,11 @@ public class SceneManager : MonoBehaviour
     public void loadGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+    }
+    
+    public void loadMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
     
     public void showQuitMenu()
@@ -39,6 +43,8 @@ public class SceneManager : MonoBehaviour
     {
         Application.Quit();
     }
+    
+    
     
     
 }

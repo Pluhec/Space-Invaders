@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     public float health = 10f;
     public float maxHealth = 10f;
     public float healthRegen = 0.1f;
+
+    public GameObject deathScreen;
     
     public void TakeDamage(float damage)
     {
@@ -21,20 +23,10 @@ public class Health : MonoBehaviour
 
         healthBar.fillAmount = health / maxHealth;
     }
-    
-    public void RegenHealth()
-    {
-        health += healthRegen;
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-        
-        healthBar.fillAmount = health / maxHealth;
-    }
 
     public void Die()
     {
-        Debug.Log("Dead");
+        deathScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 }

@@ -7,12 +7,12 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    public int score = 20;
+    public int score = 0;
 
     private void Update()
     {
-        scoreText.text = "Score: " + score;
-        Debug.Log("Hracovo score" + score);
+        // scoreText.text = "Score: " + score;
+        // Debug.Log("Hracovo score" + score);
     }
 
     public void AddScore(int amount)
