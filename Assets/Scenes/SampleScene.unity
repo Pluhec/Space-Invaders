@@ -994,7 +994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 100'
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 51539bded136042af85f44c7888f7d9c, type: 2}
   m_sharedMaterial: {fileID: 629242893290479111, guid: 51539bded136042af85f44c7888f7d9c, type: 2}
@@ -2704,7 +2704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 559565565}
-  score: 10
+  score: 0
 --- !u!1 &1417214342
 GameObject:
   m_ObjectHideFlags: 0
