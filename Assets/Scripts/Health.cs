@@ -29,4 +29,9 @@ public class Health : MonoBehaviour
         deathScreen.SetActive(true);
         Time.timeScale = 0;
     }
+
+    public void playExplosion()
+    {
+        
+    }
 }
