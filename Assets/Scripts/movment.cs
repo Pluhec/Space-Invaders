@@ -1,66 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     Rigidbody2D body;
-    
+
     [SerializeField] private Animator _animator;
     public GameObject flameR;
     public GameObject flameL;
 
-    float horizontal;
-    float vertical;
+    public float moveSpeed = 2.0f;
+    public float rotationSpeed = 200.0f;
 
-    public float runSpeed = 2.0f;
-    public float health = 1f;
+    private float moveInput;
+    private float rotationInput;
 
-    void Start ()
+    void Start()
     {
-        body = GetComponent<Rigidbody2D>(); 
+        body = GetComponent<Rigidbody2D>();
     }
 
-    void Update ()
+    void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical"); 
+        moveInput = Input.GetAxisRaw("Vertical");
+        rotationInput = Input.GetAxisRaw("Horizontal");
     }
 
     private void FixedUpdate()
-    {  
-        body.linearVelocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-        if (horizontal != 0)
-        {
-            _animator.SetBool("isRight", horizontal > 0);
-            if (_animator.GetBool("isRight"))
-            {
-                flameL.transform.localScale = new Vector3(0.3f, 0.3f, 0);
-                flameL.transform.rotation = Quaternion.Euler(0, 0, -30);
-                flameR.transform.localScale = new Vector3(0.4377788f, 0.4377788f, 0);
-                flameR.transform.rotation = Quaternion.Euler(0, 0, -30);
+    {
+        moveInput = Mathf.Clamp(moveInput, 0, 1);
+        
+        float rotation = rotationInput * rotationSpeed * Time.fixedDeltaTime;
+        body.rotation -= rotation;
+        
+        Vector2 direction = transform.up;
+        body.linearVelocity = direction * moveInput * moveSpeed;
 
-            }
-            _animator.SetBool("isLeft", horizontal < 0);
-            if (_animator.GetBool("isLeft"))
-            {
-                
-                flameL.transform.rotation = Quaternion.Euler(0, 0, 30);
-                flameR.transform.localScale = new Vector3(0.3f, 0.3f, 0);
-                flameR.transform.rotation = Quaternion.Euler(0, 0, 30);
-                flameL.transform.localScale = new Vector3(0.4377788f, 0.4377788f, 0);
-            }
+        if (moveInput != 0)
+        {
+            _animator.SetBool("isMoving", true);
+            flameL.SetActive(true);
+            flameR.SetActive(true);
         }
         else
         {
-            _animator.SetBool("isRight", false);
-            _animator.SetBool("isLeft", false);
-            flameL.transform.rotation = Quaternion.Euler(0, 0, 0);
-            flameR.transform.rotation = Quaternion.Euler(0, 0, 0);
-            flameL.transform.localScale = new Vector3(0.4377788f, 0.4377788f, 0);
-            flameR.transform.localScale = new Vector3(0.4377788f, 0.4377788f, 0);
+            _animator.SetBool("isMoving", false);
+            flameL.SetActive(false);
+            flameR.SetActive(false);
         }
-        
     }
 }
