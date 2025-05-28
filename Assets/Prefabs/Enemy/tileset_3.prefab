@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  explosionPrefab: {fileID: 8733482247767521255}
+  explosionPrefab: {fileID: 2423807516705158967, guid: b0ee139969b30496caa048bb8805aa13, type: 3}
   scoreValue: 5
 --- !u!1 &8733482247767521255
 GameObject:
