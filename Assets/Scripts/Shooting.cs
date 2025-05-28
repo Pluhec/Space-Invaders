@@ -17,12 +17,12 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
 
-        if (Input.GetMouseButtonDown(1) && cooldownTimer <= 0f)
+        if (Input.GetMouseButtonDown(1) && cooldownTimer <= 0f || Input.GetButtonDown("Fire2") && cooldownTimer <= 0f)
         {
             ShootSpecialAbility();
             cooldownTimer = specialAbilityCooldown;
