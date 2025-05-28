@@ -15,11 +15,13 @@ public class Health : MonoBehaviour
     
     public void TakeDamage(float damage)
     {
+        var shield = GetComponent<ShieldController>();
+        if (shield != null && shield.IsShielded())
+            return;
+
         health -= damage;
         if (health <= 0)
-        {
             Die();
-        }
 
         healthBar.fillAmount = health / maxHealth;
     }
