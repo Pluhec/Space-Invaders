@@ -394,7 +394,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8386700678180927065}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -425,8 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e052a42e3feb44e4b42eec32b6a1f465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
   asteroidDamage: 50
+  scoreValue: 2
 --- !u!61 &2790269352840969318
 BoxCollider2D:
   m_ObjectHideFlags: 0

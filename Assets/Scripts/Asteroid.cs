@@ -10,29 +10,28 @@ public class Asteroid : MonoBehaviour
     {
         Destroy(gameObject, 7f);
     }
-    
+
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.CompareTag("asteroidDeleteBarrier"))
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
         if (col.CompareTag("bullet"))
         {
             Destroy(col.gameObject);
             AddScoreToPlayer();
             Destroy(gameObject);
+            return;
         }
-        else if (col.CompareTag("asteroidDeleteBarrier"))
+        
+        if (col.CompareTag("Player"))
         {
-            Destroy(gameObject);
-        }
-    }
-    
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            var healthComp = collision.gameObject.GetComponent<Health>();
+            var healthComp = col.GetComponent<Health>();
             if (healthComp != null)
                 healthComp.TakeDamage(asteroidDamage);
-
             Destroy(gameObject);
         }
     }

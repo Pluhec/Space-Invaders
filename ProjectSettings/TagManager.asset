@@ -9,6 +9,7 @@ TagManager:
   - asteroidDeleteBarrier
   - bullet
   - asteroid
+  - Enemy
   - enemy
   layers:
   - Default
