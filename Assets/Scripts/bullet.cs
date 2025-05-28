@@ -23,7 +23,7 @@ public class bullet : MonoBehaviour
 
     private void AlignRotationWithVelocity()
     {
-        Vector2 v = rb.velocity;
+        Vector2 v = rb.linearVelocity;
         if (v.sqrMagnitude > 0.01f)
         {
             float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
@@ -33,16 +33,20 @@ public class bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("bulletDeleteBarrier"))
+        if (collision.CompareTag("bulletDeleteBarrier") || collision.CompareTag("asteroid"))
         {
             Destroy(gameObject);
             return;
         }
-        if (collision.CompareTag("asteroid"))
+        
+        var enemyHealth = collision.GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
         {
+            enemyHealth.TakeDamage(damage);
             Destroy(gameObject);
             return;
         }
+        
         var healthComp = collision.GetComponent<Health>();
         if (healthComp != null)
         {

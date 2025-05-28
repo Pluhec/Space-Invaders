@@ -9,6 +9,7 @@ TagManager:
   - asteroidDeleteBarrier
   - bullet
   - asteroid
+  - enemy
   layers:
   - Default
   - TransparentFX

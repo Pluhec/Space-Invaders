@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2821206930813368160}
   - component: {fileID: 1066489772064604147}
-  - component: {fileID: 5448747132469109197}
+  - component: {fileID: 3392175091345731933}
   - component: {fileID: 4862806342322845898}
   - component: {fileID: 346536677044431243}
+  - component: {fileID: 8184630312925733616}
   m_Layer: 0
   m_Name: tileset_3
   m_TagString: enemy
@@ -91,8 +92,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5448747132469109197
-CircleCollider2D:
+--- !u!60 &3392175091345731933
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,12 +122,55 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.04
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.08, y: 0.08}
+    newSize: {x: 0.08, y: 0.08}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.029949911, y: 0.039600402}
+      - {x: 0.009694171, y: 0.04021611}
+      - {x: 0.009505069, y: 0.029686779}
+      - {x: 0.019554926, y: 0.02915842}
+      - {x: 0.019427905, y: 0.020778988}
+      - {x: -0.019298688, y: 0.020484183}
+      - {x: -0.019362528, y: 0.0297807}
+      - {x: -0.00932879, y: 0.029391767}
+      - {x: -0.009788619, y: 0.040130474}
+      - {x: -0.029839842, y: 0.039890137}
+      - {x: -0.030458936, y: 0.03089261}
+      - {x: -0.03957211, y: 0.030239632}
+      - {x: -0.039828222, y: 0.010204978}
+      - {x: -0.029951014, y: 0.0096555445}
+      - {x: -0.030025253, y: -0.009630085}
+      - {x: -0.039600704, y: -0.010087256}
+      - {x: -0.04, y: -0.04}
+      - {x: -0.010081942, y: -0.040100407}
+      - {x: -0.009974419, y: -0.030025193}
+      - {x: -0.019750617, y: -0.029454535}
+      - {x: -0.019726776, y: -0.02022408}
+      - {x: 0.019191926, y: -0.021013437}
+      - {x: 0.020024596, y: -0.029405762}
+      - {x: 0.010091566, y: -0.029918797}
+      - {x: 0.01011828, y: -0.039910186}
+      - {x: 0.04, y: -0.04}
+      - {x: 0.039785128, y: -0.00931514}
+      - {x: 0.030458933, y: -0.00897969}
+      - {x: 0.030220747, y: 0.009906756}
+      - {x: 0.040291503, y: 0.009969559}
+      - {x: 0.039889082, y: 0.030034244}
+      - {x: 0.030458935, y: 0.030892614}
+  m_UseDelaunayMesh: 0
 --- !u!50 &4862806342322845898
 Rigidbody2D:
   serializedVersion: 5
@@ -175,6 +219,21 @@ MonoBehaviour:
   minShootInterval: 1
   maxShootInterval: 2
   bulletSpeed: 10
+--- !u!114 &8184630312925733616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266588208360833503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76fe491182b0401592a50a9837b6e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  explosionPrefab: {fileID: 8733482247767521255}
+  scoreValue: 5
 --- !u!1 &8733482247767521255
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +259,7 @@ Transform:
   m_GameObject: {fileID: 8733482247767521255}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0253, z: 0}
+  m_LocalPosition: {x: 0, y: -0.053, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e052a42e3feb44e4b42eec32b6a1f465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: -2812919394954211679, guid: 36bfa44cf3e924a8b826bada9e8fac80, type: 3}
+  bullet: {fileID: 0}
+  asteroidDamage: 50
 --- !u!61 &5337752333924362221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
