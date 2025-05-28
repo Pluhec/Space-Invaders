@@ -29,12 +29,18 @@ public class FollowAndShootEnemy : MonoBehaviour
 
     void Update()
     {
+        Vector2 dirToPlayer = (player.position - transform.position).normalized;
+        
+        float angle = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg - 90f + 180f;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        // vzdalenost
         float dist = Vector2.Distance(transform.position, player.position);
 
         if (dist > stoppingDistance + chaseBuffer)
         {
-            Vector2 dir = (player.position - transform.position).normalized;
-            transform.position += (Vector3)(dir * speed * Time.deltaTime);
+            // chase
+            transform.position += (Vector3)(dirToPlayer * speed * Time.deltaTime);
         }
         else if (dist > stoppingDistance)
         {
@@ -54,7 +60,6 @@ public class FollowAndShootEnemy : MonoBehaviour
     private void ShootAtPlayer()
     {
         Vector2 shootDir = (player.position - nozzle.position).normalized;
-
         GameObject proj = Instantiate(bulletPrefab, nozzle.position, Quaternion.identity);
         Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
         rb.linearVelocity = shootDir * bulletSpeed;
