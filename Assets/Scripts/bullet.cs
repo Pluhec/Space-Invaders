@@ -1,19 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+    [Header("Nastavení poškození")]
+    public float damage = 1f;
+    public float lifetime = 2f;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
     {
-        if (collision.gameObject.CompareTag("bulletDeleteBarrier"))
+        Destroy(gameObject, lifetime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("bulletDeleteBarrier"))
         {
             Destroy(gameObject);
+            return;
         }
-        if (collision.gameObject.CompareTag("asteroid"))
+        
+        if (collision.CompareTag("asteroid"))
         {
             Destroy(gameObject);
+            return;
         }
+        
+        var healthComp = collision.GetComponent<Health>();
+        if (healthComp != null)
+        {
+            healthComp.TakeDamage(damage);
+            Destroy(gameObject);
+            return;
+        }
+        
     }
 }
