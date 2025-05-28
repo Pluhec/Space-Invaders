@@ -16,6 +16,8 @@ public class FollowAndShootEnemy : MonoBehaviour
     public float minShootInterval = 1f;
     public float maxShootInterval = 2f;
     public float bulletSpeed = 10f;
+    
+    public AudioClip clip;
 
     private float shootTimer;
 
@@ -53,6 +55,7 @@ public class FollowAndShootEnemy : MonoBehaviour
             {
                 ShootAtPlayer();
                 shootTimer = GetRandomShootInterval();
+                AudioManager.Instance.PlaySFX(clip);
             }
         }
     }

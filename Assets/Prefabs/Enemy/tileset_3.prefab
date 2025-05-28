@@ -219,6 +219,7 @@ MonoBehaviour:
   minShootInterval: 1
   maxShootInterval: 2
   bulletSpeed: 10
+  clip: {fileID: 8300000, guid: 998f70e0705344318a8baf683b39a63c, type: 3}
 --- !u!114 &8184630312925733616
 MonoBehaviour:
   m_ObjectHideFlags: 0

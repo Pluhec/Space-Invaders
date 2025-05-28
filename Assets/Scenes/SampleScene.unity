@@ -3738,6 +3738,7 @@ MonoBehaviour:
   specialAbilitySpeed: 40
   specialAbilityCount: 3
   specialAbilityCooldown: 10
+  laserClip: {fileID: 8300000, guid: 998f70e0705344318a8baf683b39a63c, type: 3}
 --- !u!114 &1346298177
 MonoBehaviour:
   m_ObjectHideFlags: 0

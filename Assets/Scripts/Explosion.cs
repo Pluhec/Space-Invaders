@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Explosion : MonoBehaviour
 {
+    public AudioClip clip;
+    
     private void Start()
     {
         Animator animator = GetComponent<Animator>();
@@ -12,6 +14,7 @@ public class Explosion : MonoBehaviour
             Destroy(gameObject, 1f);
             return;
         }
+        AudioManager.Instance.PlaySFX(clip);
         
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
         float clipLength = 0f;

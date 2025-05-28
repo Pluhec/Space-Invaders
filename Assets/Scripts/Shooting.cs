@@ -11,6 +11,8 @@ public class Shooting : MonoBehaviour
     public int specialAbilityCount = 8;
     public float specialAbilityCooldown = 10f;
 
+    public AudioClip laserClip;
+    
     private float cooldownTimer = 0f;
 
     void Update()
@@ -37,6 +39,8 @@ public class Shooting : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, nozzle.position, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.linearVelocity = transform.up * bulletSpeed;
+        
+        AudioManager.Instance.PlaySFX(laserClip);
     }
 
     void ShootSpecialAbility()
